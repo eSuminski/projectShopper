@@ -17,7 +17,7 @@ public class ShoppingListDAOImp implements ShoppingListDAO {
             preparedStatement.setInt(3, shoppingList.getCustomerId());
             preparedStatement.setInt(4, shoppingList.getShopperId());
             preparedStatement.setString(5, shoppingList.getShopperComment());
-            preparedStatement.setString(6, shoppingList.getListStatus());
+            preparedStatement.setString(6, "Incomplete");
             preparedStatement.execute();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             resultSet.next();
