@@ -3,27 +3,30 @@ package entities;
 import java.util.Objects;
 
 public class ShopperLogin {
-    private String username;
-    private String password;
+    private String shopperName;
+    private String shopperUsername;
+    private String shopperPassword;
+    private int shopperZipCode;
     private int shopperId;
-    private int loginId;
 
-    public ShopperLogin(){};
+    public ShopperLogin() {}
 
-    public ShopperLogin(String username, String password, int shopperId, int loginId) {
-        this.username = username;
-        this.password = password;
+    public ShopperLogin(String shopperName, String shopperUsername, String shopperPassword, int shopperZipCode, int shopperId) {
+        this.shopperName = shopperName;
+        this.shopperUsername = shopperUsername;
+        this.shopperPassword = shopperPassword;
+        this.shopperZipCode = shopperZipCode;
         this.shopperId = shopperId;
-        this.loginId = loginId;
     }
 
     @Override
     public String toString() {
         return "ShopperLogin{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                "shopperName='" + shopperName + '\'' +
+                ", shopperUsername='" + shopperUsername + '\'' +
+                ", shopperPassword='" + shopperPassword + '\'' +
+                ", shopperZipCode=" + shopperZipCode +
                 ", shopperId=" + shopperId +
-                ", loginId=" + loginId +
                 '}';
     }
 
@@ -32,28 +35,44 @@ public class ShopperLogin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ShopperLogin that = (ShopperLogin) o;
-        return shopperId == that.shopperId && loginId == that.loginId && Objects.equals(username, that.username) && Objects.equals(password, that.password);
+        return shopperZipCode == that.shopperZipCode && shopperId == that.shopperId && Objects.equals(shopperName, that.shopperName) && Objects.equals(shopperUsername, that.shopperUsername) && Objects.equals(shopperPassword, that.shopperPassword);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, shopperId, loginId);
+        return Objects.hash(shopperName, shopperUsername, shopperPassword, shopperZipCode, shopperId);
     }
 
-    public String getUsername() {
-        return username;
+    public String getShopperName() {
+        return shopperName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setShopperName(String shopperName) {
+        this.shopperName = shopperName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getShopperUsername() {
+        return shopperUsername;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setShopperUsername(String shopperUsername) {
+        this.shopperUsername = shopperUsername;
+    }
+
+    public String getShopperPassword() {
+        return shopperPassword;
+    }
+
+    public void setShopperPassword(String shopperPassword) {
+        this.shopperPassword = shopperPassword;
+    }
+
+    public int getShopperZipCode() {
+        return shopperZipCode;
+    }
+
+    public void setShopperZipCode(int shopperZipCode) {
+        this.shopperZipCode = shopperZipCode;
     }
 
     public int getShopperId() {
@@ -63,12 +82,5 @@ public class ShopperLogin {
     public void setShopperId(int shopperId) {
         this.shopperId = shopperId;
     }
-
-    public int getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(int loginId) {
-        this.loginId = loginId;
-    }
 }
+

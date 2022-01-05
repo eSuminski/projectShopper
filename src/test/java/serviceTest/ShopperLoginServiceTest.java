@@ -14,8 +14,8 @@ public class ShopperLoginServiceTest {
 
     @Test
     void validateShopperLogin(){
-        ShopperLogin shopperLogin = shopperLoginServices.getShopperLoginServices("tester", "abc123");
-        Assert.assertEquals(shopperLogin.getUsername(), "tester");
-        Assert.assertEquals(shopperLogin.getPassword(),"abc123");
+        ShopperLogin shopperLogin = shopperLoginServices.getShopperLoginServices("princess", "lilmeanie");
+        Assert.assertEquals(shopperLogin.getShopperUsername(), "princess");
+        Assert.assertEquals(shopperLogin.getShopperPassword(),"lilmeanie");
     }
 }

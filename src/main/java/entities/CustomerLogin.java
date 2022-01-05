@@ -3,26 +3,30 @@ package entities;
 import java.util.Objects;
 
 public class CustomerLogin {
-    private String username;
-    private String password;
-    private int loginId;
+    private String customerName;
+    private String customerUsername;
+    private String customerPassword;
+    private int customerZipCode;
     private int customerId;
 
-    public CustomerLogin() {}
+    public CustomerLogin() {
+    }
 
-    public CustomerLogin(String username, String password, int loginId, int customerId) {
-        this.username = username;
-        this.password = password;
-        this.loginId = loginId;
+    public CustomerLogin(String customerName, String customerUsername, String customerPassword, int customerZipCode, int customerId) {
+        this.customerName = customerName;
+        this.customerUsername = customerUsername;
+        this.customerPassword = customerPassword;
+        this.customerZipCode = customerZipCode;
         this.customerId = customerId;
     }
 
     @Override
     public String toString() {
         return "CustomerLogin{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", loginId=" + loginId +
+                "customerName='" + customerName + '\'' +
+                ", customerUsername='" + customerUsername + '\'' +
+                ", customerPassword='" + customerPassword + '\'' +
+                ", customerZipCode=" + customerZipCode +
                 ", customerId=" + customerId +
                 '}';
     }
@@ -32,36 +36,44 @@ public class CustomerLogin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomerLogin that = (CustomerLogin) o;
-        return loginId == that.loginId && customerId == that.customerId && Objects.equals(username, that.username) && Objects.equals(password, that.password);
+        return customerZipCode == that.customerZipCode && customerId == that.customerId && Objects.equals(customerName, that.customerName) && Objects.equals(customerUsername, that.customerUsername) && Objects.equals(customerPassword, that.customerPassword);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, loginId, customerId);
+        return Objects.hash(customerName, customerUsername, customerPassword, customerZipCode, customerId);
     }
 
-    public String getUsername() {
-        return username;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCustomerUsername() {
+        return customerUsername;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCustomerUsername(String customerUsername) {
+        this.customerUsername = customerUsername;
     }
 
-    public int getLoginId() {
-        return loginId;
+    public String getCustomerPassword() {
+        return customerPassword;
     }
 
-    public void setLoginId(int loginId) {
-        this.loginId = loginId;
+    public void setCustomerPassword(String customerPassword) {
+        this.customerPassword = customerPassword;
+    }
+
+    public int getCustomerZipCode() {
+        return customerZipCode;
+    }
+
+    public void setCustomerZipCode(int customerZipCode) {
+        this.customerZipCode = customerZipCode;
     }
 
     public int getCustomerId() {
@@ -72,4 +84,3 @@ public class CustomerLogin {
         this.customerId = customerId;
     }
 }
-

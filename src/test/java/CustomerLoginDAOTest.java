@@ -10,8 +10,8 @@ public class CustomerLoginDAOTest {
 
     @Test
     void validateCustomerLogin(){
-        CustomerLogin customerLogin = customerLoginDAO.getLoginByCredentials("username", "password");
-        Assert.assertEquals(customerLogin.getUsername(), "username");
-        Assert.assertEquals(customerLogin.getPassword(),"password");
+        CustomerLogin customerLogin = customerLoginDAO.getLoginByCredentials("javaris85", "password");
+        Assert.assertEquals(customerLogin.getCustomerUsername(), "javaris85");
+        Assert.assertEquals(customerLogin.getCustomerPassword(),"password");
     }
 }

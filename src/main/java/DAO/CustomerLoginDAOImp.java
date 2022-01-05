@@ -10,16 +10,17 @@ public class CustomerLoginDAOImp implements CustomerLoginDAO {
     @Override
     public CustomerLogin getLoginByCredentials(String username, String password) {
         try (Connection connection = ConnectionLink.createConnection()){
-            String sql = "select * from customerlogin where username= ? and password= ?";
+            String sql = "select * from customers where customer_username= ? and customer_password= ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             CustomerLogin customerLogin= new CustomerLogin();
-            customerLogin.setLoginId(resultSet.getInt("login_id"));
-            customerLogin.setUsername(resultSet.getString("username"));
-            customerLogin.setPassword(resultSet.getString("password"));
+            customerLogin.setCustomerZipCode(resultSet.getInt("customer_zipcode"));
+            customerLogin.setCustomerName(resultSet.getString("customer_name"));
+            customerLogin.setCustomerUsername(resultSet.getString("customer_username"));
+            customerLogin.setCustomerPassword(resultSet.getString("customer_password"));
             customerLogin.setCustomerId(resultSet.getInt("customer_id"));
             return customerLogin;
 

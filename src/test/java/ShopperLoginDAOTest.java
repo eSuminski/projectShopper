@@ -9,8 +9,8 @@ public class ShopperLoginDAOTest {
 
     @Test
     void validateCustomerLogin() {
-        ShopperLogin shopperLogin = shopperLoginDAO.getShopperLoginByCredentials("tester", "abc123");
-        Assert.assertEquals(shopperLogin.getUsername(), "tester");
-        Assert.assertEquals(shopperLogin.getPassword(), "abc123");
+        ShopperLogin shopperLogin = shopperLoginDAO.getShopperLoginByCredentials("princess", "lilmeanie");
+        Assert.assertEquals(shopperLogin.getShopperUsername(), "princess");
+        Assert.assertEquals(shopperLogin.getShopperPassword(), "lilmeanie");
     }
 }

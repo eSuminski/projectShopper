@@ -15,9 +15,9 @@ public class CustomerLoginServiceTest {
 
     @Test
     void validateCustomerLogin(){
-        CustomerLogin customerLogin = customerLoginServices.getCustomerLoginServices("tester", "abc123");
-        Assert.assertEquals(customerLogin.getUsername(), "tester");
-        Assert.assertEquals(customerLogin.getPassword(),"abc123");
+        CustomerLogin customerLogin = customerLoginServices.getCustomerLoginServices("javaris85", "password");
+        Assert.assertEquals(customerLogin.getCustomerUsername(), "javaris85");
+        Assert.assertEquals(customerLogin.getCustomerPassword(),"password");
 
     }
 
